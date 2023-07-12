@@ -1,0 +1,18 @@
+version: 0.2 
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm install -g @angular/cli
+      - npm install 
+
+  build:
+    commands:
+      - ng build --prod 
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: /home/ubuntu/my-angular-app/dist/my-angular-app
