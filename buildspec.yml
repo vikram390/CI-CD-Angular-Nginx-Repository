@@ -10,7 +10,7 @@ phases:
 
   build:
     commands:
-      - ng build --prod 
+      - ng build --configuration production 
 
 artifacts:
   files:
