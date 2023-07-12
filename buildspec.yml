@@ -31,9 +31,10 @@ phases:
         index index.html;
 
         location / {
-                try_files $uri $uri/ /index.html;
+            try_files $uri $uri/ /index.html;
+          }
         }
- }
+
         EOF
       - sudo ln -s /etc/nginx/sites-available/angular-app /etc/nginx/sites-enabled/
       - sudo systemctl restart nginx
