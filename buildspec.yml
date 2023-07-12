@@ -15,4 +15,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: /home/ubuntu/my-angular-app/dist/my-angular-app
+  base-directory: /home/ubuntu/my-angular-app/dist
