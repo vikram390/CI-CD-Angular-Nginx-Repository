@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.2 
 
 phases:
   install:
@@ -6,40 +6,13 @@ phases:
       nodejs: 16
     commands:
       - npm install -g @angular/cli
-
-  pre_build:
-    commands:
-      - npm install
-      - ng build --configuration production
+      - npm install 
 
   build:
     commands:
-      - sudo apt-get update
-      - sudo apt-get install -y nginx
-      - sudo rm -rf /var/www/html/*
-      - sudo cp -R dist/* /var/www/html/
-      - sudo rm /etc/nginx/sites-available/default
-      - sudo rm /etc/nginx/sites-enabled/default
-      - sudo tee /etc/nginx/sites-available/angular-app > /dev/null <<EOF
-        server {
-        listen 80;
-        listen [::]:80;
-
-        server_name 54.80.141.44;
-
-        root /var/www/html;
-        index index.html;
-
-        location / {
-            try_files $uri $uri/ /index.html;
-          }
-        }
-
-        EOF
-      - sudo ln -s /etc/nginx/sites-available/angular-app /etc/nginx/sites-enabled/
-      - sudo systemctl restart nginx
+      - ng build --configuration production 
 
 artifacts:
   files:
     - '**/*'
-  base-directory: ./dist/
+  base-directory: /home/ubuntu/my-angular-app/dist/my-angular-app/
