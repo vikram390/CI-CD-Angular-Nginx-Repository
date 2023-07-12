@@ -14,5 +14,5 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
+    - 'appspec.yml'
   base-directory: /home/ubuntu/my-angular-app/dist/my-angular-app/
