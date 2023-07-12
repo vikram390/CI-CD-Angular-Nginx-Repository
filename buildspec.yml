@@ -22,13 +22,18 @@ phases:
       - sudo rm /etc/nginx/sites-enabled/default
       - sudo tee /etc/nginx/sites-available/angular-app > /dev/null <<EOF
         server {
-          listen 80;
-          root /var/www/html;
-          index index.html;
-          location / {
-            try_files $uri $uri/ /index.html;
-          }
+        listen 80;
+        listen [::]:80;
+
+        server_name 54.80.141.44;
+
+        root /var/www/html;
+        index index.html;
+
+        location / {
+                try_files $uri $uri/ /index.html;
         }
+ }
         EOF
       - sudo ln -s /etc/nginx/sites-available/angular-app /etc/nginx/sites-enabled/
       - sudo systemctl restart nginx
