@@ -18,7 +18,7 @@ cd /var/www/html
 npm install
 
 # Build the Angular application
-npm run build -- --prod
+ng build --configuration production
 
 # Configure Nginx to serve the Angular application
 sudo rm /etc/nginx/sites-enabled/default
