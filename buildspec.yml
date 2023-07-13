@@ -10,9 +10,10 @@ phases:
 
   build:
     commands:
-      - ng build --configuration production 
+      - ng build --configuration production
+      - dir target 
 
 artifacts:
   files:
     - '**/*'
-  base-directory: /home/ubuntu/angular-app/dist/angular-app
+  base-directory: /home/ubuntu/my-angular-app/dist/my-angular-app
