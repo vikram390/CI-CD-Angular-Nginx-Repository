@@ -20,12 +20,16 @@ rm /etc/nginx/sites-enabled/default
 # Create a new Nginx configuration file for your Angular application
 cat >/etc/nginx/sites-available/angular-app <<EOL
 server {
-    listen 80;
-    server_name 54.152.60.195;
+        listen 80;
+        listen [::]:80;
 
-    location / {
+        server_name 54.80.141.44;
+
         root /var/www/html;
-        try_files \$uri \$uri/ /index.html;
+        index index.html;
+
+        location / {
+                try_files $uri $uri/ /index.html;
     }
 }
 EOL
