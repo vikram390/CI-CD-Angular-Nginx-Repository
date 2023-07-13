@@ -25,7 +25,7 @@ server {
 
         server_name 54.80.141.44;
 
-        root /var/www/html;
+        root /home/ubuntu/my-angular-app/dist/my-angular-app/;
         index index.html;
 
         location / {
