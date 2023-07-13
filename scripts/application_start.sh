@@ -4,5 +4,5 @@
 cd /var/www/html
 
 # Start the Angular application in the background
-npm start &
+nohup npm start > /dev/null 2>&1 &
 
