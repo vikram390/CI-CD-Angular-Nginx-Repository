@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: appspec.yml
-    destination: /var/www/html
+    destination: /home/ubuntu/my-angular-app
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
