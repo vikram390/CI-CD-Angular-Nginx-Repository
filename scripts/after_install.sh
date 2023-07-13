@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Install Node.js if it's not already installed
+command -v node >/dev/null 2>&1 || {
+  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+}
+
+# Install Angular CLI if it's not already installed
+command -v ng >/dev/null 2>&1 || {
+  sudo npm install -g @angular/cli
+}
+
 # Navigate to the application directory
 cd /var/www/html
 
@@ -7,18 +18,15 @@ cd /var/www/html
 npm install
 
 # Build the Angular application
-npm run build
-
-# Set ownership and permissions for Nginx
-chown -R www-data:www-data /var/www/html
-chmod -R 755 /var/www/html
+npm run build -- --prod
 
 # Configure Nginx to serve the Angular application
-rm /etc/nginx/sites-enabled/default
-cp nginx.conf /etc/nginx/sites-available/angular-app
-ln -s /etc/nginx/sites-available/angular-app /etc/nginx/sites-enabled/
+sudo rm /etc/nginx/sites-enabled/default
+sudo cp nginx.conf /etc/nginx/sites-available/angular-app
+sudo ln -s /etc/nginx/sites-available/angular-app /etc/nginx/sites-enabled/
 
 # Restart Nginx service
-service nginx restart
+sudo service nginx restart
+
 
 
