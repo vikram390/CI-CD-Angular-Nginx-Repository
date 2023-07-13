@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the application directory
-cd /var/www/html
+cd /home/ubuntu/my-angular-app
 
 # Install project dependencies
 npm install
@@ -10,7 +10,7 @@ npm install
 npm run build
 
 # Set file permissions
-chown -R www-data:www-data /var/www/html
+chown -R www-data:www-data /home/ubuntu/my-angular-app
 
 # Restart Nginx service
 service nginx restart
