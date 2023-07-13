@@ -38,6 +38,6 @@ EOL
 ln -s /etc/nginx/sites-available/angular-app /etc/nginx/sites-enabled/
 
 # Restart Nginx service
-service nginx start
+service nginx restart
 
 
