@@ -21,10 +21,10 @@ rm /etc/nginx/sites-enabled/default
 cat >/etc/nginx/sites-available/angular-app <<EOL
 server {
     listen 80;
-    server_name localhost;
+    server_name 54.152.60.195;
 
     location / {
-        root /var/www/html;
+        root /home/ubuntu/my-angular-app/dist/my-angular-app;
         try_files \$uri \$uri/ /index.html;
     }
 }
