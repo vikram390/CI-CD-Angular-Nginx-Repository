@@ -23,9 +23,9 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name 54.80.141.44;
+        server_name 52.207.217.241;
 
-        root /home/ubuntu/my-angular-app/dist/my-angular-app/;
+        root /var/www/html;
         index index.html;
 
         location / {
