@@ -11,7 +11,7 @@ sudo tee /etc/nginx/conf.d/angular-app.conf > /dev/null <<EOF
 server {
     listen 80;
     root /var/www/html;
-    index index.html index.htm;
+    index index.html;
     server_name 54.82.54.221;
 
     location / {
