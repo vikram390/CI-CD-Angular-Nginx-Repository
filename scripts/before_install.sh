@@ -9,15 +9,18 @@ sudo rm /etc/nginx/sites-enabled/default
 # Create a new Nginx configuration file
 sudo tee /etc/nginx/conf.d/angular-app.conf > /dev/null <<EOF
 server {
-    listen 80;
-    root /var/www/html;
-    index index.html;
-    server_name 54.82.54.221;
+        listen 80;
+        listen [::]:80;
 
-    location / {
-        try_files \$uri \$uri/ /index.html;
-    }
-}
+        server_name 54.82.54.221;
+
+        root /var/www/html;
+        index index.html;
+
+        location / {
+                try_files $uri $uri/ /index.html;
+        }
+ }
 EOF
 
 # Test Nginx configuration
