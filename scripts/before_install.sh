@@ -10,7 +10,7 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo tee /etc/nginx/conf.d/angular-app.conf > /dev/null <<EOF
 server {
     listen 80;
-    root /var/www/html;
+    root /var/www/html/dist/my-angular-app;
     index index.html index.htm;
     server_name 54.82.54.221;
 
