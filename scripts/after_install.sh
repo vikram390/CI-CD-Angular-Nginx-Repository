@@ -12,7 +12,7 @@ command -v ng >/dev/null 2>&1 || {
 }
 
 # Navigate to the application directory
-cd /home/ubuntu
+cd /var/www/html
 
 # Install project dependencies
 npm install
